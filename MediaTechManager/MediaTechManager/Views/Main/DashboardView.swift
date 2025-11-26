@@ -86,7 +86,10 @@ struct DashboardView: View {
                 NewRentalView()
             }
             .fullScreenCover(isPresented: $showScanner) {
-                QRCodeScannerView()
+                QRCodeScannerView { scannedCode in
+                    // Handle scanned QR code
+                    print("Scanned: \(scannedCode)")
+                }
             }
         }
     }

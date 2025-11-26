@@ -248,10 +248,10 @@ struct RentalDetailView: View {
 
                     DetailRow(
                         label: "Kaution erhalten",
-                        value: rental.depositPaid ? "Ja" : "Nein"
+                        value: rental.depositReceived ? "Ja" : "Nein"
                     )
 
-                    if rental.depositPaid && !rental.depositReturned {
+                    if rental.depositReceived && !rental.depositReturned {
                         DetailRow(
                             label: "Kaution zurückgegeben",
                             value: "Nein"
@@ -355,7 +355,7 @@ struct ReturnRentalView: View {
                         .lineLimit(3...6)
                 }
 
-                if rental.depositAmount > 0 && rental.depositPaid {
+                if rental.depositAmount > 0 && rental.depositReceived {
                     Section("Kaution") {
                         Toggle("Kaution zurückgeben", isOn: $returnDeposit)
 

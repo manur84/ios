@@ -117,17 +117,17 @@ enum ExportService {
 
         for customer in customers {
             let row = [
-                customer.customerNumber ?? "",
+                customer.customerNumber,
                 customer.firstName,
                 customer.lastName,
                 customer.company ?? "",
                 customer.email,
-                customer.phone ?? "",
+                customer.phone,
                 customer.mobile ?? "",
-                customer.street ?? "",
-                customer.zipCode ?? "",
-                customer.city ?? "",
-                customer.country ?? "",
+                customer.street,
+                customer.postalCode,
+                customer.city,
+                customer.country,
                 customer.customerType.displayName
             ]
 
@@ -141,37 +141,25 @@ enum ExportService {
     static func exportCustomersAsJSON(_ customers: [Customer]) -> Data? {
         let exportData = customers.map { customer -> [String: Any] in
             var dict: [String: Any] = [
+                "customerNumber": customer.customerNumber,
                 "firstName": customer.firstName,
                 "lastName": customer.lastName,
                 "email": customer.email,
+                "phone": customer.phone,
+                "street": customer.street,
+                "postalCode": customer.postalCode,
+                "city": customer.city,
+                "country": customer.country,
                 "customerType": customer.customerType.rawValue,
                 "createdAt": ISO8601DateFormatter().string(from: customer.createdAt),
                 "updatedAt": ISO8601DateFormatter().string(from: customer.updatedAt)
             ]
 
-            if let number = customer.customerNumber {
-                dict["customerNumber"] = number
-            }
             if let company = customer.company {
                 dict["company"] = company
             }
-            if let phone = customer.phone {
-                dict["phone"] = phone
-            }
             if let mobile = customer.mobile {
                 dict["mobile"] = mobile
-            }
-            if let street = customer.street {
-                dict["street"] = street
-            }
-            if let zip = customer.zipCode {
-                dict["zipCode"] = zip
-            }
-            if let city = customer.city {
-                dict["city"] = city
-            }
-            if let country = customer.country {
-                dict["country"] = country
             }
             if !customer.notes.isEmpty {
                 dict["notes"] = customer.notes
@@ -223,7 +211,7 @@ enum ExportService {
                 "plannedEndDate": ISO8601DateFormatter().string(from: rental.plannedEndDate),
                 "totalPrice": rental.totalPrice,
                 "depositAmount": rental.depositAmount,
-                "depositPaid": rental.depositPaid,
+                "depositReceived": rental.depositReceived,
                 "depositReturned": rental.depositReturned,
                 "createdAt": ISO8601DateFormatter().string(from: rental.createdAt)
             ]

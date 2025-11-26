@@ -49,10 +49,7 @@ struct RentalRowView: View {
 
             // Right Side
             VStack(alignment: .trailing, spacing: Spacing.xxs) {
-                StatusBadge(
-                    rental.status.displayName,
-                    color: Color(hex: rental.status.colorHex)
-                )
+                StatusBadge(status: rental.status)
 
                 Text("\(rental.items.count) Gerät(e)")
                     .font(.labelSmall)
@@ -71,11 +68,11 @@ struct RentalRowView: View {
     private var statusIcon: some View {
         ZStack {
             Circle()
-                .fill(Color(hex: rental.status.colorHex).opacity(0.15))
+                .fill(rental.status.fallbackColor.opacity(0.15))
                 .frame(width: 44, height: 44)
 
             Image(systemName: rental.status.icon)
-                .foregroundStyle(Color(hex: rental.status.colorHex))
+                .foregroundStyle(rental.status.fallbackColor)
         }
     }
 
