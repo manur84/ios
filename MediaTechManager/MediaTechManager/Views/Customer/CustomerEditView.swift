@@ -35,7 +35,7 @@ struct CustomerEditView: View {
     @State private var mobile = ""
 
     @State private var street = ""
-    @State private var zipCode = ""
+    @State private var postalCode = ""
     @State private var city = ""
     @State private var country = "Deutschland"
 
@@ -104,7 +104,7 @@ struct CustomerEditView: View {
                         .textContentType(.streetAddressLine1)
 
                     HStack {
-                        TextField("PLZ", text: $zipCode)
+                        TextField("PLZ", text: $postalCode)
                             .textContentType(.postalCode)
                             .keyboardType(.numberPad)
                             .frame(width: 80)
@@ -163,15 +163,15 @@ struct CustomerEditView: View {
         firstName = customer.firstName
         lastName = customer.lastName
         company = customer.company ?? ""
-        customerNumber = customer.customerNumber ?? ""
+        customerNumber = customer.customerNumber
         customerType = customer.customerType
         email = customer.email
-        phone = customer.phone ?? ""
+        phone = customer.phone
         mobile = customer.mobile ?? ""
-        street = customer.street ?? ""
-        zipCode = customer.zipCode ?? ""
-        city = customer.city ?? ""
-        country = customer.country ?? "Deutschland"
+        street = customer.street
+        postalCode = customer.postalCode
+        city = customer.city
+        country = customer.country
         notes = customer.notes
     }
 
@@ -190,15 +190,15 @@ struct CustomerEditView: View {
         targetCustomer.firstName = firstName
         targetCustomer.lastName = lastName
         targetCustomer.company = company.isEmpty ? nil : company
-        targetCustomer.customerNumber = customerNumber.isEmpty ? nil : customerNumber
+        targetCustomer.customerNumber = customerNumber
         targetCustomer.customerType = customerType
         targetCustomer.email = email
-        targetCustomer.phone = phone.isEmpty ? nil : phone
+        targetCustomer.phone = phone
         targetCustomer.mobile = mobile.isEmpty ? nil : mobile
-        targetCustomer.street = street.isEmpty ? nil : street
-        targetCustomer.zipCode = zipCode.isEmpty ? nil : zipCode
-        targetCustomer.city = city.isEmpty ? nil : city
-        targetCustomer.country = country.isEmpty ? nil : country
+        targetCustomer.street = street
+        targetCustomer.postalCode = postalCode
+        targetCustomer.city = city
+        targetCustomer.country = country
         targetCustomer.notes = notes
         targetCustomer.updatedAt = Date()
 

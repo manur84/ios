@@ -124,13 +124,13 @@ struct RentalDetailView: View {
                                 .foregroundStyle(.secondary)
                         }
 
-                        if let phone = customer.phone {
+                        if !customer.phone.isEmpty {
                             Button {
-                                if let url = URL(string: "tel:\(phone)") {
+                                if let url = URL(string: "tel:\(customer.phone)") {
                                     UIApplication.shared.open(url)
                                 }
                             } label: {
-                                Label(phone, systemImage: "phone")
+                                Label(customer.phone, systemImage: "phone")
                                     .font(.bodySmall)
                             }
                         }

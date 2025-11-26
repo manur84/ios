@@ -114,12 +114,12 @@ struct CustomerDetailView: View {
                 CustomerTypeBadge(type: customer.customerType)
             }
 
-            if let customerNumber = customer.customerNumber {
+            if !customer.customerNumber.isEmpty {
                 HStack {
                     Text("Kundennummer")
                         .font(.labelSmall)
                         .foregroundStyle(.secondary)
-                    Text(customerNumber)
+                    Text(customer.customerNumber)
                         .font(.labelSmall)
                 }
             }
@@ -148,13 +148,13 @@ struct CustomerDetailView: View {
                 )
 
                 // Phone
-                if let phone = customer.phone {
+                if !customer.phone.isEmpty {
                     ContactRow(
                         icon: "phone",
                         label: "Telefon",
-                        value: phone,
+                        value: customer.phone,
                         action: {
-                            if let url = URL(string: "tel:\(phone)") {
+                            if let url = URL(string: "tel:\(customer.phone)") {
                                 UIApplication.shared.open(url)
                             }
                         }
@@ -187,14 +187,14 @@ struct CustomerDetailView: View {
                 .font(.titleMedium)
 
             VStack(alignment: .leading, spacing: Spacing.xxs) {
-                if let street = customer.street {
-                    Text(street)
+                if !customer.street.isEmpty {
+                    Text(customer.street)
                 }
-                if let zip = customer.zipCode, let city = customer.city {
-                    Text("\(zip) \(city)")
+                if !customer.postalCode.isEmpty || !customer.city.isEmpty {
+                    Text("\(customer.postalCode) \(customer.city)")
                 }
-                if let country = customer.country {
-                    Text(country)
+                if !customer.country.isEmpty && customer.country != "Deutschland" {
+                    Text(customer.country)
                 }
             }
             .font(.bodyMedium)
@@ -275,7 +275,7 @@ struct CustomerDetailView: View {
 
                             Spacer()
 
-                            StatusBadge(rental.status.displayName, color: Color(hex: rental.status.colorHex))
+                            StatusBadge(status: rental.status)
 
                             Image(systemName: "chevron.right")
                                 .font(.caption)
@@ -316,9 +316,9 @@ struct CustomerDetailView: View {
 
     private func openInMaps() {
         var addressComponents: [String] = []
-        if let street = customer.street { addressComponents.append(street) }
-        if let zip = customer.zipCode { addressComponents.append(zip) }
-        if let city = customer.city { addressComponents.append(city) }
+        if !customer.street.isEmpty { addressComponents.append(customer.street) }
+        if !customer.postalCode.isEmpty { addressComponents.append(customer.postalCode) }
+        if !customer.city.isEmpty { addressComponents.append(customer.city) }
 
         let address = addressComponents.joined(separator: ", ")
         let encodedAddress = address.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
