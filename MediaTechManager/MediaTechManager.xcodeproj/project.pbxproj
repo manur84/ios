@@ -7,20 +7,161 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001000000001 /* MediaTechManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000001 /* MediaTechManagerApp.swift */; };
-		001000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000002 /* ContentView.swift */; };
-		001000000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000000000003 /* Assets.xcassets */; };
+		A10000000001 /* MediaTechManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000001 /* MediaTechManagerApp.swift */; };
+		A10000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000002 /* ContentView.swift */; };
+		A10000000003 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000003 /* MainTabView.swift */; };
+		A10000000004 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000004 /* DashboardView.swift */; };
+		A10000000005 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000005 /* Colors.swift */; };
+		A10000000006 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000006 /* Typography.swift */; };
+		A10000000007 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000007 /* Spacing.swift */; };
+		A10000000008 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000008 /* Layout.swift */; };
+		A10000000009 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000009 /* Animations.swift */; };
+		A10000000010 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000010 /* Date+Extensions.swift */; };
+		A10000000011 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000011 /* View+Extensions.swift */; };
+		A10000000012 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000012 /* String+Extensions.swift */; };
+		A10000000013 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000013 /* Constants.swift */; };
+		A10000000014 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000014 /* KeychainManager.swift */; };
+		A10000000015 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000015 /* Logger.swift */; };
+		A10000000016 /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000016 /* ShakeEffect.swift */; };
+		A10000000017 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000017 /* Equipment.swift */; };
+		A10000000018 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000018 /* Customer.swift */; };
+		A10000000019 /* Rental.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000019 /* Rental.swift */; };
+		A10000000020 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000020 /* Category.swift */; };
+		A10000000021 /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000021 /* Condition.swift */; };
+		A10000000022 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000022 /* Location.swift */; };
+		A10000000023 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000023 /* Tag.swift */; };
+		A10000000024 /* RentalStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000024 /* RentalStatus.swift */; };
+		A10000000025 /* CustomerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000025 /* CustomerType.swift */; };
+		A10000000026 /* MaintenanceRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000026 /* MaintenanceRecord.swift */; };
+		A10000000027 /* DamageReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000027 /* DamageReport.swift */; };
+		A10000000028 /* AuditLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000028 /* AuditLog.swift */; };
+		A10000000029 /* EquipmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000029 /* EquipmentListView.swift */; };
+		A10000000030 /* EquipmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000030 /* EquipmentDetailView.swift */; };
+		A10000000031 /* EquipmentEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000031 /* EquipmentEditView.swift */; };
+		A10000000032 /* EquipmentFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000032 /* EquipmentFilterView.swift */; };
+		A10000000033 /* RentalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000033 /* RentalListView.swift */; };
+		A10000000034 /* RentalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000034 /* RentalDetailView.swift */; };
+		A10000000035 /* NewRentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000035 /* NewRentalView.swift */; };
+		A10000000036 /* CustomerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000036 /* CustomerListView.swift */; };
+		A10000000037 /* CustomerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000037 /* CustomerDetailView.swift */; };
+		A10000000038 /* CustomerEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000038 /* CustomerEditView.swift */; };
+		A10000000039 /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000039 /* QRCodeScannerView.swift */; };
+		A10000000040 /* QRCodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000040 /* QRCodeGeneratorView.swift */; };
+		A10000000041 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000041 /* SettingsView.swift */; };
+		A10000000042 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000042 /* PrivacyPolicyView.swift */; };
+		A10000000043 /* PINSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000043 /* PINSetupView.swift */; };
+		A10000000044 /* ExportImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000044 /* ExportImportView.swift */; };
+		A10000000045 /* BackupRestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000045 /* BackupRestoreView.swift */; };
+		A10000000046 /* CategoryManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000046 /* CategoryManagementView.swift */; };
+		A10000000047 /* ConditionManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000047 /* ConditionManagementView.swift */; };
+		A10000000048 /* LocationManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000048 /* LocationManagementView.swift */; };
+		A10000000049 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000049 /* StatisticsView.swift */; };
+		A10000000050 /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000050 /* LockScreenView.swift */; };
+		A10000000051 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000051 /* OnboardingContainerView.swift */; };
+		A10000000052 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000052 /* PrimaryButton.swift */; };
+		A10000000053 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000053 /* SecondaryButton.swift */; };
+		A10000000054 /* StatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000054 /* StatCard.swift */; };
+		A10000000055 /* EquipmentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000055 /* EquipmentRowView.swift */; };
+		A10000000056 /* RentalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000056 /* RentalRowView.swift */; };
+		A10000000057 /* CustomerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000057 /* CustomerRowView.swift */; };
+		A10000000058 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000058 /* StatusBadge.swift */; };
+		A10000000059 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000059 /* Badge.swift */; };
+		A10000000060 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000060 /* EmptyStateView.swift */; };
+		A10000000061 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000061 /* LoadingView.swift */; };
+		A10000000062 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000062 /* SearchBar.swift */; };
+		A10000000063 /* FilterChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000063 /* FilterChip.swift */; };
+		A10000000064 /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000064 /* SignatureView.swift */; };
+		A10000000065 /* ConfirmationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000065 /* ConfirmationButton.swift */; };
+		A10000000066 /* ToastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000066 /* ToastManager.swift */; };
+		A10000000067 /* AppStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000067 /* AppStateManager.swift */; };
+		A10000000068 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000068 /* HapticManager.swift */; };
+		A10000000069 /* PDFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000069 /* PDFService.swift */; };
+		A10000000070 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000070 /* ImageService.swift */; };
+		A10000000071 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000071 /* ExportService.swift */; };
+		A10000000072 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000072 /* DataService.swift */; };
+		A10000000073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10000000073 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		000000000001 /* MediaTechManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTechManagerApp.swift; sourceTree = "<group>"; };
-		000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		000000000003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		000000000004 /* MediaTechManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaTechManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000000001 /* MediaTechManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTechManagerApp.swift; sourceTree = "<group>"; };
+		B10000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B10000000003 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B10000000004 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B10000000005 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B10000000006 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		B10000000007 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		B10000000008 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		B10000000009 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		B10000000010 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		B10000000011 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		B10000000012 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B10000000013 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B10000000014 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		B10000000015 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B10000000016 /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
+		B10000000017 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		B10000000018 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		B10000000019 /* Rental.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rental.swift; sourceTree = "<group>"; };
+		B10000000020 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B10000000021 /* Condition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Condition.swift; sourceTree = "<group>"; };
+		B10000000022 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		B10000000023 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		B10000000024 /* RentalStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalStatus.swift; sourceTree = "<group>"; };
+		B10000000025 /* CustomerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerType.swift; sourceTree = "<group>"; };
+		B10000000026 /* MaintenanceRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceRecord.swift; sourceTree = "<group>"; };
+		B10000000027 /* DamageReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageReport.swift; sourceTree = "<group>"; };
+		B10000000028 /* AuditLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditLog.swift; sourceTree = "<group>"; };
+		B10000000029 /* EquipmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentListView.swift; sourceTree = "<group>"; };
+		B10000000030 /* EquipmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentDetailView.swift; sourceTree = "<group>"; };
+		B10000000031 /* EquipmentEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentEditView.swift; sourceTree = "<group>"; };
+		B10000000032 /* EquipmentFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentFilterView.swift; sourceTree = "<group>"; };
+		B10000000033 /* RentalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalListView.swift; sourceTree = "<group>"; };
+		B10000000034 /* RentalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalDetailView.swift; sourceTree = "<group>"; };
+		B10000000035 /* NewRentalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRentalView.swift; sourceTree = "<group>"; };
+		B10000000036 /* CustomerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListView.swift; sourceTree = "<group>"; };
+		B10000000037 /* CustomerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailView.swift; sourceTree = "<group>"; };
+		B10000000038 /* CustomerEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerEditView.swift; sourceTree = "<group>"; };
+		B10000000039 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
+		B10000000040 /* QRCodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGeneratorView.swift; sourceTree = "<group>"; };
+		B10000000041 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B10000000042 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		B10000000043 /* PINSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINSetupView.swift; sourceTree = "<group>"; };
+		B10000000044 /* ExportImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportImportView.swift; sourceTree = "<group>"; };
+		B10000000045 /* BackupRestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupRestoreView.swift; sourceTree = "<group>"; };
+		B10000000046 /* CategoryManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManagementView.swift; sourceTree = "<group>"; };
+		B10000000047 /* ConditionManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionManagementView.swift; sourceTree = "<group>"; };
+		B10000000048 /* LocationManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagementView.swift; sourceTree = "<group>"; };
+		B10000000049 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		B10000000050 /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		B10000000051 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
+		B10000000052 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		B10000000053 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		B10000000054 /* StatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCard.swift; sourceTree = "<group>"; };
+		B10000000055 /* EquipmentRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentRowView.swift; sourceTree = "<group>"; };
+		B10000000056 /* RentalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalRowView.swift; sourceTree = "<group>"; };
+		B10000000057 /* CustomerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRowView.swift; sourceTree = "<group>"; };
+		B10000000058 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		B10000000059 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		B10000000060 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		B10000000061 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B10000000062 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B10000000063 /* FilterChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterChip.swift; sourceTree = "<group>"; };
+		B10000000064 /* SignatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		B10000000065 /* ConfirmationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationButton.swift; sourceTree = "<group>"; };
+		B10000000066 /* ToastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastManager.swift; sourceTree = "<group>"; };
+		B10000000067 /* AppStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateManager.swift; sourceTree = "<group>"; };
+		B10000000068 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		B10000000069 /* PDFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFService.swift; sourceTree = "<group>"; };
+		B10000000070 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		B10000000071 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		B10000000072 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B10000000073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B10000000074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10000000099 /* MediaTechManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaTechManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		000000000010 /* Frameworks */ = {
+		C10000000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -30,42 +171,361 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		000000000020 = {
+		D10000000001 = {
 			isa = PBXGroup;
 			children = (
-				000000000021 /* MediaTechManager */,
-				000000000022 /* Products */,
+				D10000000002 /* MediaTechManager */,
+				D10000000003 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		000000000021 /* MediaTechManager */ = {
+		D10000000002 /* MediaTechManager */ = {
 			isa = PBXGroup;
 			children = (
-				000000000001 /* MediaTechManagerApp.swift */,
-				000000000002 /* ContentView.swift */,
-				000000000003 /* Assets.xcassets */,
+				D10000000010 /* App */,
+				D10000000020 /* Core */,
+				D10000000030 /* Models */,
+				D10000000040 /* Views */,
+				D10000000050 /* Components */,
+				D10000000060 /* Managers */,
+				D10000000070 /* Services */,
+				D10000000080 /* Resources */,
 			);
 			path = MediaTechManager;
 			sourceTree = "<group>";
 		};
-		000000000022 /* Products */ = {
+		D10000000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				000000000004 /* MediaTechManager.app */,
+				B10000000099 /* MediaTechManager.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D10000000010 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000001 /* MediaTechManagerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D10000000020 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D10000000021 /* DesignSystem */,
+				D10000000022 /* Extensions */,
+				D10000000023 /* Utilities */,
+				D10000000024 /* Modifiers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D10000000021 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000005 /* Colors.swift */,
+				B10000000006 /* Typography.swift */,
+				B10000000007 /* Spacing.swift */,
+				B10000000008 /* Layout.swift */,
+				B10000000009 /* Animations.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D10000000022 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000010 /* Date+Extensions.swift */,
+				B10000000011 /* View+Extensions.swift */,
+				B10000000012 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D10000000023 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000013 /* Constants.swift */,
+				B10000000014 /* KeychainManager.swift */,
+				B10000000015 /* Logger.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D10000000024 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000016 /* ShakeEffect.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		D10000000030 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D10000000031 /* Core */,
+				D10000000032 /* Enums */,
+				D10000000033 /* Supporting */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D10000000031 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000017 /* Equipment.swift */,
+				B10000000018 /* Customer.swift */,
+				B10000000019 /* Rental.swift */,
+				B10000000020 /* Category.swift */,
+				B10000000021 /* Condition.swift */,
+				B10000000022 /* Location.swift */,
+				B10000000023 /* Tag.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D10000000032 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000024 /* RentalStatus.swift */,
+				B10000000025 /* CustomerType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		D10000000033 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000026 /* MaintenanceRecord.swift */,
+				B10000000027 /* DamageReport.swift */,
+				B10000000028 /* AuditLog.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		D10000000040 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D10000000041 /* Main */,
+				D10000000042 /* Equipment */,
+				D10000000043 /* Rental */,
+				D10000000044 /* Customer */,
+				D10000000045 /* Scanner */,
+				D10000000046 /* Settings */,
+				D10000000047 /* Statistics */,
+				D10000000048 /* Authentication */,
+				D10000000049 /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D10000000041 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000002 /* ContentView.swift */,
+				B10000000003 /* MainTabView.swift */,
+				B10000000004 /* DashboardView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D10000000042 /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000029 /* EquipmentListView.swift */,
+				B10000000030 /* EquipmentDetailView.swift */,
+				B10000000031 /* EquipmentEditView.swift */,
+				B10000000032 /* EquipmentFilterView.swift */,
+			);
+			path = Equipment;
+			sourceTree = "<group>";
+		};
+		D10000000043 /* Rental */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000033 /* RentalListView.swift */,
+				B10000000034 /* RentalDetailView.swift */,
+				B10000000035 /* NewRentalView.swift */,
+			);
+			path = Rental;
+			sourceTree = "<group>";
+		};
+		D10000000044 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000036 /* CustomerListView.swift */,
+				B10000000037 /* CustomerDetailView.swift */,
+				B10000000038 /* CustomerEditView.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		D10000000045 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000039 /* QRCodeScannerView.swift */,
+				B10000000040 /* QRCodeGeneratorView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		D10000000046 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000041 /* SettingsView.swift */,
+				B10000000042 /* PrivacyPolicyView.swift */,
+				B10000000043 /* PINSetupView.swift */,
+				B10000000044 /* ExportImportView.swift */,
+				B10000000045 /* BackupRestoreView.swift */,
+				D10000000046A /* MasterData */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D10000000046A /* MasterData */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000046 /* CategoryManagementView.swift */,
+				B10000000047 /* ConditionManagementView.swift */,
+				B10000000048 /* LocationManagementView.swift */,
+			);
+			path = MasterData;
+			sourceTree = "<group>";
+		};
+		D10000000047 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000049 /* StatisticsView.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		D10000000048 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000050 /* LockScreenView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D10000000049 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000051 /* OnboardingContainerView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D10000000050 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D10000000051 /* Buttons */,
+				D10000000052 /* Cards */,
+				D10000000053 /* Badges */,
+				D10000000054 /* Feedback */,
+				D10000000055 /* Input */,
+				D10000000056 /* Common */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D10000000051 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000052 /* PrimaryButton.swift */,
+				B10000000053 /* SecondaryButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D10000000052 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000054 /* StatCard.swift */,
+				B10000000055 /* EquipmentRowView.swift */,
+				B10000000056 /* RentalRowView.swift */,
+				B10000000057 /* CustomerRowView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		D10000000053 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000058 /* StatusBadge.swift */,
+				B10000000059 /* Badge.swift */,
+			);
+			path = Badges;
+			sourceTree = "<group>";
+		};
+		D10000000054 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000060 /* EmptyStateView.swift */,
+				B10000000061 /* LoadingView.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		D10000000055 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000062 /* SearchBar.swift */,
+				B10000000063 /* FilterChip.swift */,
+				B10000000064 /* SignatureView.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		D10000000056 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000065 /* ConfirmationButton.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D10000000060 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000066 /* ToastManager.swift */,
+				B10000000067 /* AppStateManager.swift */,
+				B10000000068 /* HapticManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D10000000070 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000069 /* PDFService.swift */,
+				B10000000070 /* ImageService.swift */,
+				B10000000071 /* ExportService.swift */,
+				B10000000072 /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D10000000080 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000073 /* Assets.xcassets */,
+				B10000000074 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		000000000030 /* MediaTechManager */ = {
+		E10000000001 /* MediaTechManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 000000000031 /* Build configuration list for PBXNativeTarget "MediaTechManager" */;
+			buildConfigurationList = E10000000002 /* Build configuration list for PBXNativeTarget "MediaTechManager" */;
 			buildPhases = (
-				000000000032 /* Sources */,
-				000000000010 /* Frameworks */,
-				000000000033 /* Resources */,
+				E10000000003 /* Sources */,
+				C10000000001 /* Frameworks */,
+				E10000000004 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -73,25 +533,25 @@
 			);
 			name = MediaTechManager;
 			productName = MediaTechManager;
-			productReference = 000000000004 /* MediaTechManager.app */;
+			productReference = B10000000099 /* MediaTechManager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		000000000040 /* Project object */ = {
+		F10000000001 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					000000000030 = {
+					E10000000001 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 000000000041 /* Build configuration list for PBXProject "MediaTechManager" */;
+			buildConfigurationList = F10000000002 /* Build configuration list for PBXProject "MediaTechManager" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = de;
 			hasScannedForEncodings = 0;
@@ -99,41 +559,111 @@
 				de,
 				Base,
 			);
-			mainGroup = 000000000020;
-			productRefGroup = 000000000022 /* Products */;
+			mainGroup = D10000000001;
+			productRefGroup = D10000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				000000000030 /* MediaTechManager */,
+				E10000000001 /* MediaTechManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		000000000033 /* Resources */ = {
+		E10000000004 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001000000003 /* Assets.xcassets in Resources */,
+				A10000000073 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		000000000032 /* Sources */ = {
+		E10000000003 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001000000001 /* MediaTechManagerApp.swift in Sources */,
-				001000000002 /* ContentView.swift in Sources */,
+				A10000000001 /* MediaTechManagerApp.swift in Sources */,
+				A10000000002 /* ContentView.swift in Sources */,
+				A10000000003 /* MainTabView.swift in Sources */,
+				A10000000004 /* DashboardView.swift in Sources */,
+				A10000000005 /* Colors.swift in Sources */,
+				A10000000006 /* Typography.swift in Sources */,
+				A10000000007 /* Spacing.swift in Sources */,
+				A10000000008 /* Layout.swift in Sources */,
+				A10000000009 /* Animations.swift in Sources */,
+				A10000000010 /* Date+Extensions.swift in Sources */,
+				A10000000011 /* View+Extensions.swift in Sources */,
+				A10000000012 /* String+Extensions.swift in Sources */,
+				A10000000013 /* Constants.swift in Sources */,
+				A10000000014 /* KeychainManager.swift in Sources */,
+				A10000000015 /* Logger.swift in Sources */,
+				A10000000016 /* ShakeEffect.swift in Sources */,
+				A10000000017 /* Equipment.swift in Sources */,
+				A10000000018 /* Customer.swift in Sources */,
+				A10000000019 /* Rental.swift in Sources */,
+				A10000000020 /* Category.swift in Sources */,
+				A10000000021 /* Condition.swift in Sources */,
+				A10000000022 /* Location.swift in Sources */,
+				A10000000023 /* Tag.swift in Sources */,
+				A10000000024 /* RentalStatus.swift in Sources */,
+				A10000000025 /* CustomerType.swift in Sources */,
+				A10000000026 /* MaintenanceRecord.swift in Sources */,
+				A10000000027 /* DamageReport.swift in Sources */,
+				A10000000028 /* AuditLog.swift in Sources */,
+				A10000000029 /* EquipmentListView.swift in Sources */,
+				A10000000030 /* EquipmentDetailView.swift in Sources */,
+				A10000000031 /* EquipmentEditView.swift in Sources */,
+				A10000000032 /* EquipmentFilterView.swift in Sources */,
+				A10000000033 /* RentalListView.swift in Sources */,
+				A10000000034 /* RentalDetailView.swift in Sources */,
+				A10000000035 /* NewRentalView.swift in Sources */,
+				A10000000036 /* CustomerListView.swift in Sources */,
+				A10000000037 /* CustomerDetailView.swift in Sources */,
+				A10000000038 /* CustomerEditView.swift in Sources */,
+				A10000000039 /* QRCodeScannerView.swift in Sources */,
+				A10000000040 /* QRCodeGeneratorView.swift in Sources */,
+				A10000000041 /* SettingsView.swift in Sources */,
+				A10000000042 /* PrivacyPolicyView.swift in Sources */,
+				A10000000043 /* PINSetupView.swift in Sources */,
+				A10000000044 /* ExportImportView.swift in Sources */,
+				A10000000045 /* BackupRestoreView.swift in Sources */,
+				A10000000046 /* CategoryManagementView.swift in Sources */,
+				A10000000047 /* ConditionManagementView.swift in Sources */,
+				A10000000048 /* LocationManagementView.swift in Sources */,
+				A10000000049 /* StatisticsView.swift in Sources */,
+				A10000000050 /* LockScreenView.swift in Sources */,
+				A10000000051 /* OnboardingContainerView.swift in Sources */,
+				A10000000052 /* PrimaryButton.swift in Sources */,
+				A10000000053 /* SecondaryButton.swift in Sources */,
+				A10000000054 /* StatCard.swift in Sources */,
+				A10000000055 /* EquipmentRowView.swift in Sources */,
+				A10000000056 /* RentalRowView.swift in Sources */,
+				A10000000057 /* CustomerRowView.swift in Sources */,
+				A10000000058 /* StatusBadge.swift in Sources */,
+				A10000000059 /* Badge.swift in Sources */,
+				A10000000060 /* EmptyStateView.swift in Sources */,
+				A10000000061 /* LoadingView.swift in Sources */,
+				A10000000062 /* SearchBar.swift in Sources */,
+				A10000000063 /* FilterChip.swift in Sources */,
+				A10000000064 /* SignatureView.swift in Sources */,
+				A10000000065 /* ConfirmationButton.swift in Sources */,
+				A10000000066 /* ToastManager.swift in Sources */,
+				A10000000067 /* AppStateManager.swift in Sources */,
+				A10000000068 /* HapticManager.swift in Sources */,
+				A10000000069 /* PDFService.swift in Sources */,
+				A10000000070 /* ImageService.swift in Sources */,
+				A10000000071 /* ExportService.swift in Sources */,
+				A10000000072 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		000000000050 /* Debug */ = {
+		G10000000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -196,7 +726,7 @@
 			};
 			name = Debug;
 		};
-		000000000051 /* Release */ = {
+		G10000000002 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +782,7 @@
 			};
 			name = Release;
 		};
-		000000000052 /* Debug */ = {
+		G10000000003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -289,7 +819,7 @@
 			};
 			name = Debug;
 		};
-		000000000053 /* Release */ = {
+		G10000000004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -329,25 +859,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		000000000031 /* Build configuration list for PBXNativeTarget "MediaTechManager" */ = {
+		E10000000002 /* Build configuration list for PBXNativeTarget "MediaTechManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000052 /* Debug */,
-				000000000053 /* Release */,
+				G10000000003 /* Debug */,
+				G10000000004 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		000000000041 /* Build configuration list for PBXProject "MediaTechManager" */ = {
+		F10000000002 /* Build configuration list for PBXProject "MediaTechManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000050 /* Debug */,
-				000000000051 /* Release */,
+				G10000000001 /* Debug */,
+				G10000000002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 000000000040 /* Project object */;
+	rootObject = F10000000001 /* Project object */;
 }
