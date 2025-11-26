@@ -49,7 +49,7 @@ struct EquipmentRowView: View {
                 AvailabilityBadge(isAvailable: equipment.isAvailable)
 
                 if let rate = equipment.dailyRate {
-                    Text("\(rate, format: .currency(code: \"EUR\"))/Tag")
+                    Text("\(rate.formatted(.currency(code: "EUR")))/Tag")
                         .font(.labelSmall)
                         .foregroundStyle(.secondary)
                 }

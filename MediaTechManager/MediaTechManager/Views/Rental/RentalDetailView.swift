@@ -359,7 +359,7 @@ struct ReturnRentalView: View {
                     Section("Kaution") {
                         Toggle("Kaution zurückgeben", isOn: $returnDeposit)
 
-                        Text("Kaution: \(rental.depositAmount, format: .currency(code: \"EUR\"))")
+                        Text("Kaution: \(rental.depositAmount.formatted(.currency(code: "EUR")))")
                             .foregroundStyle(.secondary)
                     }
                 }
