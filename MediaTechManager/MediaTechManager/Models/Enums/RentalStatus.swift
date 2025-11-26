@@ -80,6 +80,22 @@ enum RentalStatus: String, CaseIterable, Codable {
         }
     }
 
+    /// Farbe als Hex-String
+    var colorHex: String {
+        switch self {
+        case .reserved:
+            return "007AFF"
+        case .active:
+            return "34C759"
+        case .overdue:
+            return "FF3B30"
+        case .returned:
+            return "8E8E93"
+        case .cancelled:
+            return "636366"
+        }
+    }
+
     /// Kann der Status bearbeitet werden?
     var isEditable: Bool {
         switch self {

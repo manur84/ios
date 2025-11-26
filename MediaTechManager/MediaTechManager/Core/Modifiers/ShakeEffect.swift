@@ -25,23 +25,21 @@ struct ShakeEffect: GeometryEffect {
 // MARK: - View Extension
 
 extension View {
-    func shake(trigger: Bool) -> some View {
+    func shake(trigger: Int) -> some View {
         modifier(ShakeModifier(trigger: trigger))
     }
 }
 
 struct ShakeModifier: ViewModifier {
-    let trigger: Bool
+    let trigger: Int
     @State private var shakeCount: CGFloat = 0
 
     func body(content: Content) -> some View {
         content
             .modifier(ShakeEffect(animatableData: shakeCount))
-            .onChange(of: trigger) { _, newValue in
-                if newValue {
-                    withAnimation(.linear(duration: 0.4)) {
-                        shakeCount += 1
-                    }
+            .onChange(of: trigger) { _, _ in
+                withAnimation(.linear(duration: 0.4)) {
+                    shakeCount += 1
                 }
             }
     }
@@ -96,7 +94,7 @@ extension View {
         Text("Shake Effect")
             .padding()
             .background(Color.red.opacity(0.2))
-            .shake(trigger: false)
+            .shake(trigger: 0)
 
         Circle()
             .fill(Color.blue)

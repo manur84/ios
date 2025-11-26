@@ -108,8 +108,8 @@ struct LocationRow: View {
                 Text(location.name)
                     .font(.bodyMedium)
 
-                if let address = location.address, !address.isEmpty {
-                    Text(address)
+                if !location.address.isEmpty {
+                    Text(location.address)
                         .font(.labelSmall)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
@@ -234,8 +234,8 @@ struct LocationEditSheet: View {
     private func loadData() {
         guard let location else { return }
         name = location.name
-        address = location.address ?? ""
-        descriptionText = location.descriptionText ?? ""
+        address = location.address
+        descriptionText = location.descriptionText
         selectedIcon = location.iconName
         selectedColor = location.colorHex
     }
@@ -248,8 +248,8 @@ struct LocationEditSheet: View {
         )
 
         targetLocation.name = name
-        targetLocation.address = address.isEmpty ? nil : address
-        targetLocation.descriptionText = descriptionText.isEmpty ? nil : descriptionText
+        targetLocation.address = address
+        targetLocation.descriptionText = descriptionText
         targetLocation.iconName = selectedIcon
         targetLocation.colorHex = selectedColor
 

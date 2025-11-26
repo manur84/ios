@@ -108,8 +108,8 @@ struct ConditionRow: View {
                 Text(condition.name)
                     .font(.bodyMedium)
 
-                if let description = condition.descriptionText, !description.isEmpty {
-                    Text(description)
+                if !condition.descriptionText.isEmpty {
+                    Text(condition.descriptionText)
                         .font(.labelSmall)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
@@ -230,7 +230,7 @@ struct ConditionEditSheet: View {
     private func loadData() {
         guard let condition else { return }
         name = condition.name
-        descriptionText = condition.descriptionText ?? ""
+        descriptionText = condition.descriptionText
         selectedIcon = condition.iconName
         selectedColor = condition.colorHex
     }
@@ -243,7 +243,7 @@ struct ConditionEditSheet: View {
         )
 
         targetCondition.name = name
-        targetCondition.descriptionText = descriptionText.isEmpty ? nil : descriptionText
+        targetCondition.descriptionText = descriptionText
         targetCondition.iconName = selectedIcon
         targetCondition.colorHex = selectedColor
 
