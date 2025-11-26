@@ -25,7 +25,7 @@ struct PINSetupView: View {
     @State private var errorMessage = ""
 
     private var hasExistingPIN: Bool {
-        KeychainManager.shared.getPIN() != nil
+        KeychainManager.shared.hasPIN
     }
 
     // MARK: - Body
@@ -178,8 +178,7 @@ struct PINSetupView: View {
     }
 
     private func validateCurrentPIN() {
-        if let storedPIN = KeychainManager.shared.getPIN(),
-           currentPIN == storedPIN {
+        if KeychainManager.shared.validatePIN(currentPIN) {
             withAnimation {
                 step = .new
             }
@@ -197,16 +196,25 @@ struct PINSetupView: View {
     private func validateAndSave() {
         if newPIN == confirmPIN {
             // Save new PIN
-            KeychainManager.shared.savePIN(newPIN)
-            appState.securityEnabled = true
+            do {
+                try KeychainManager.shared.savePIN(newPIN)
+                appState.securityEnabled = true
 
-            toastManager.success("PIN gespeichert")
+                toastManager.success("PIN gespeichert")
 
-            // Haptic
-            let generator = UINotificationFeedbackGenerator()
-            generator.notificationOccurred(.success)
+                // Haptic
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
 
-            dismiss()
+                dismiss()
+            } catch {
+                showError = true
+                errorMessage = "Fehler beim Speichern"
+
+                // Haptic
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
+            }
         } else {
             showError = true
             errorMessage = "PINs stimmen nicht überein"

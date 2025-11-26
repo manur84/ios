@@ -108,8 +108,8 @@ struct CategoryRow: View {
                 Text(category.name)
                     .font(.bodyMedium)
 
-                if let description = category.descriptionText, !description.isEmpty {
-                    Text(description)
+                if !category.descriptionText.isEmpty {
+                    Text(category.descriptionText)
                         .font(.labelSmall)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
@@ -251,7 +251,7 @@ struct CategoryEditSheet: View {
     private func loadData() {
         guard let category else { return }
         name = category.name
-        descriptionText = category.descriptionText ?? ""
+        descriptionText = category.descriptionText
         selectedIcon = category.iconName
         selectedColor = category.colorHex
     }
@@ -264,7 +264,7 @@ struct CategoryEditSheet: View {
         )
 
         targetCategory.name = name
-        targetCategory.descriptionText = descriptionText.isEmpty ? nil : descriptionText
+        targetCategory.descriptionText = descriptionText
         targetCategory.iconName = selectedIcon
         targetCategory.colorHex = selectedColor
 
