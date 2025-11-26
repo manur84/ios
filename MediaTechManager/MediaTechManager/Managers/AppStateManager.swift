@@ -126,11 +126,10 @@ final class AppStateManager: ObservableObject {
         self.securityEnabled = UserDefaults.standard.bool(forKey: Constants.StorageKeys.securityEnabled)
         self.biometricEnabled = UserDefaults.standard.bool(forKey: Constants.StorageKeys.biometricEnabled)
         self.autoLockEnabled = UserDefaults.standard.bool(forKey: Constants.StorageKeys.autoLockEnabled)
-        self.autoLockTimeout = UserDefaults.standard.double(forKey: Constants.StorageKeys.autoLockTimeout)
 
-        if autoLockTimeout == 0 {
-            self.autoLockTimeout = 300 // Default: 5 Minuten
-        }
+        // Set autoLockTimeout with default value if not set
+        let storedTimeout = UserDefaults.standard.double(forKey: Constants.StorageKeys.autoLockTimeout)
+        self.autoLockTimeout = storedTimeout == 0 ? 300 : storedTimeout
 
         let darkModeRaw = UserDefaults.standard.string(forKey: Constants.StorageKeys.darkModePreference) ?? DarkModePreference.system.rawValue
         self.darkModePreference = DarkModePreference(rawValue: darkModeRaw) ?? .system
