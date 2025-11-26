@@ -74,6 +74,9 @@ final class Customer {
     /// Ist als Stammkunde markiert
     var isRegularCustomer: Bool
 
+    /// Kundentyp
+    var customerType: CustomerType
+
     // MARK: - Finanzen
 
     /// Kreditlimit
@@ -116,6 +119,7 @@ final class Customer {
         identificationDocumentNumber: String? = nil,
         isActive: Bool = true,
         isRegularCustomer: Bool = false,
+        customerType: CustomerType = .private,
         creditLimit: Double? = nil,
         depositAmount: Double? = nil,
         rentals: [Rental] = [],
@@ -139,6 +143,7 @@ final class Customer {
         self.identificationDocumentNumber = identificationDocumentNumber
         self.isActive = isActive
         self.isRegularCustomer = isRegularCustomer
+        self.customerType = customerType
         self.creditLimit = creditLimit
         self.depositAmount = depositAmount
         self.rentals = rentals
@@ -200,14 +205,29 @@ extension Customer {
         rentals.count
     }
 
+    /// Aktive Ausleihen
+    var activeRentals: [Rental] {
+        rentals.filter { $0.status == .active || $0.status == .overdue }
+    }
+
     /// Anzahl der aktiven Ausleihen
-    var activeRentals: Int {
-        rentals.filter { $0.status == .active || $0.status == .overdue }.count
+    var activeRentalsCount: Int {
+        activeRentals.count
     }
 
     /// Hat aktive Ausleihen
     var hasActiveRentals: Bool {
-        activeRentals > 0
+        !activeRentals.isEmpty
+    }
+
+    /// Gesamtumsatz
+    var totalRevenue: Double {
+        rentals.filter { $0.status == .returned }.reduce(0) { $0 + $1.totalPrice }
+    }
+
+    /// Hat Adresse
+    var hasAddress: Bool {
+        !street.isEmpty || !postalCode.isEmpty || !city.isEmpty
     }
 
     /// Initialen für Avatar

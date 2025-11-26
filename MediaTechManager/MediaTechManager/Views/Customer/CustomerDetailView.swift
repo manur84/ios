@@ -403,22 +403,6 @@ struct CustomerTypeBadge: View {
     }
 }
 
-// MARK: - Customer Type Extension
-
-extension Customer {
-    var hasAddress: Bool {
-        street != nil || zipCode != nil || city != nil
-    }
-
-    var activeRentals: [Rental] {
-        rentals.filter { $0.status == .active || $0.status == .overdue }
-    }
-
-    var totalRevenue: Double {
-        rentals.filter { $0.status == .returned }.reduce(0) { $0 + $1.totalPrice }
-    }
-}
-
 // MARK: - Preview
 
 #Preview {

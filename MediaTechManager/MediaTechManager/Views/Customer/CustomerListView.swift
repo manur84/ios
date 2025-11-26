@@ -150,8 +150,8 @@ struct CustomerRow: View {
             Spacer()
 
             // Active Rentals Badge
-            if customer.activeRentals > 0 {
-                Badge("\(customer.activeRentals) aktiv", color: Color(hex: "34C759"))
+            if customer.activeRentalsCount > 0 {
+                Badge("\(customer.activeRentalsCount) aktiv", color: Color(hex: "34C759"))
             }
         }
         .padding(.vertical, Spacing.xs)

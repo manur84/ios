@@ -68,16 +68,6 @@ struct CustomerRowView: View {
     }
 }
 
-// MARK: - Customer Extension
-
-extension Customer {
-    var initials: String {
-        let firstInitial = firstName.first.map { String($0).uppercased() } ?? ""
-        let lastInitial = lastName.first.map { String($0).uppercased() } ?? ""
-        return "\(firstInitial)\(lastInitial)"
-    }
-}
-
 // MARK: - Preview
 
 #Preview {

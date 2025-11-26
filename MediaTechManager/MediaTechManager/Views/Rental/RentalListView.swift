@@ -141,27 +141,6 @@ struct RentalListView: View {
     }
 }
 
-// MARK: - Filter Chip
-
-struct FilterChip: View {
-    let title: String
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Text(title)
-                .font(.labelMedium)
-                .foregroundStyle(isSelected ? .white : .primary)
-                .padding(.horizontal, Spacing.sm)
-                .padding(.vertical, Spacing.xs)
-                .background(isSelected ? Color(hex: "007AFF") : Color.backgroundSecondary)
-                .clipShape(Capsule())
-        }
-        .buttonStyle(.plain)
-    }
-}
-
 // MARK: - Rental Row
 
 struct RentalRow: View {

@@ -32,57 +32,6 @@ struct StatusBadge: View {
     }
 }
 
-// MARK: - Generic Badge
-
-struct Badge: View {
-
-    let text: String
-    let color: Color
-    let icon: String?
-
-    init(_ text: String, color: Color = Color(hex: "007AFF"), icon: String? = nil) {
-        self.text = text
-        self.color = color
-        self.icon = icon
-    }
-
-    var body: some View {
-        HStack(spacing: 4) {
-            if let icon {
-                Image(systemName: icon)
-                    .font(.system(size: 10, weight: .semibold))
-            }
-
-            Text(text)
-                .font(.labelSmall)
-        }
-        .foregroundStyle(color)
-        .padding(.horizontal, Spacing.xs)
-        .padding(.vertical, Spacing.xxs)
-        .background(color.opacity(0.15))
-        .clipShape(Capsule())
-    }
-}
-
-// MARK: - Availability Badge
-
-struct AvailabilityBadge: View {
-
-    let isAvailable: Bool
-
-    var body: some View {
-        HStack(spacing: 4) {
-            Circle()
-                .fill(isAvailable ? Color(hex: "34C759") : Color(hex: "FF9500"))
-                .frame(width: 8, height: 8)
-
-            Text(isAvailable ? "Verfügbar" : "Verliehen")
-                .font(.labelSmall)
-                .foregroundStyle(isAvailable ? Color(hex: "34C759") : Color(hex: "FF9500"))
-        }
-    }
-}
-
 // MARK: - Preview
 
 #Preview {
@@ -92,16 +41,6 @@ struct AvailabilityBadge: View {
             StatusBadge(status: .active)
             StatusBadge(status: .overdue)
             StatusBadge(status: .returned)
-        }
-
-        HStack(spacing: 8) {
-            Badge("4K", color: Color(hex: "007AFF"))
-            Badge("Premium", color: Color(hex: "AF52DE"), icon: "star.fill")
-        }
-
-        HStack(spacing: 16) {
-            AvailabilityBadge(isAvailable: true)
-            AvailabilityBadge(isAvailable: false)
         }
     }
     .padding()

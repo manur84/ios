@@ -69,12 +69,6 @@ struct LoadingOverlay: ViewModifier {
     }
 }
 
-extension View {
-    func loadingOverlay(isLoading: Bool, message: String = "Laden...") -> some View {
-        modifier(LoadingOverlay(isLoading: isLoading, message: message))
-    }
-}
-
 // MARK: - Skeleton Loading View
 
 struct SkeletonView: View {
