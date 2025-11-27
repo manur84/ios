@@ -49,7 +49,12 @@ extension Color {
     static let statusReturned = Color("StatusReturned")
 
     // MARK: - Background Colors
-    // backgroundPrimary and backgroundSecondary are auto-generated from Asset Catalog
+
+    /// Primärer Hintergrund
+    static let backgroundPrimary = Color("BackgroundPrimary")
+
+    /// Sekundärer Hintergrund
+    static let backgroundSecondary = Color("BackgroundSecondary")
 
     /// Tertiärer Hintergrund (Karten)
     static let backgroundTertiary = Color("BackgroundTertiary")
