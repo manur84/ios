@@ -14,6 +14,7 @@ struct DashboardView: View {
 
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var toastManager: ToastManager
+    @EnvironmentObject private var appState: AppStateManager
 
     // MARK: - Queries
 
@@ -25,7 +26,11 @@ struct DashboardView: View {
 
     @State private var showNewEquipment = false
     @State private var showNewRental = false
-    @State private var showScanner = false
+    @State private var showScannerMenu = false
+    @State private var showQuickScanner = false
+    @State private var quickScanMode: QRScanMode = .single
+    @State private var scannedEquipment: Equipment?
+    @State private var showEquipmentDetail = false
 
     // MARK: - Body
 
@@ -35,6 +40,9 @@ struct DashboardView: View {
                 VStack(spacing: Spacing.sectionSpacing) {
                     // Quick Stats
                     statsSection
+
+                    // Scanner Quick Access
+                    scannerQuickAccessSection
 
                     // Quick Actions
                     quickActionsSection
@@ -67,11 +75,13 @@ struct DashboardView: View {
                         } label: {
                             Label("Neue Ausleihe", systemImage: "arrow.right.circle")
                         }
+                        
+                        Divider()
 
                         Button {
-                            showScanner = true
+                            showScannerMenu = true
                         } label: {
-                            Label("QR-Code scannen", systemImage: "qrcode.viewfinder")
+                            Label("Scanner öffnen", systemImage: "qrcode.viewfinder")
                         }
                     } label: {
                         Image(systemName: "plus.circle.fill")
@@ -85,13 +95,128 @@ struct DashboardView: View {
             .sheet(isPresented: $showNewRental) {
                 NewRentalView()
             }
-            .fullScreenCover(isPresented: $showScanner) {
-                QRCodeScannerView { scannedCode in
-                    // Handle scanned QR code
-                    print("Scanned: \(scannedCode)")
+            .sheet(isPresented: $showScannerMenu) {
+                ScannerMenuView()
+            }
+            .fullScreenCover(isPresented: $showQuickScanner) {
+                QRCodeScannerView(mode: quickScanMode) { scannedCode in
+                    handleQuickScan(scannedCode)
+                } onBatchComplete: { results in
+                    handleBatchScanComplete(results)
+                }
+            }
+            .sheet(isPresented: $showEquipmentDetail) {
+                if let equipment = scannedEquipment {
+                    NavigationStack {
+                        EquipmentDetailView(equipment: equipment)
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Schließen") {
+                                        showEquipmentDetail = false
+                                    }
+                                }
+                            }
+                    }
                 }
             }
         }
+    }
+    
+    // MARK: - Scanner Quick Access Section
+    
+    private var scannerQuickAccessSection: some View {
+        VStack(alignment: .leading, spacing: Spacing.sm) {
+            HStack {
+                Image(systemName: "qrcode.viewfinder")
+                    .foregroundStyle(Color.brandPrimary)
+                Text("Schnellzugriff Scanner")
+                    .font(.titleMedium)
+            }
+            
+            HStack(spacing: Spacing.sm) {
+                ScannerQuickButton(
+                    title: "Ausleihe",
+                    icon: "arrow.up.forward.circle.fill",
+                    color: .orange
+                ) {
+                    quickScanMode = .checkout
+                    showQuickScanner = true
+                }
+                
+                ScannerQuickButton(
+                    title: "Rückgabe",
+                    icon: "arrow.down.backward.circle.fill",
+                    color: .green
+                ) {
+                    quickScanMode = .checkin
+                    showQuickScanner = true
+                }
+                
+                ScannerQuickButton(
+                    title: "Suchen",
+                    icon: "magnifyingglass",
+                    color: .purple
+                ) {
+                    quickScanMode = .single
+                    showQuickScanner = true
+                }
+                
+                ScannerQuickButton(
+                    title: "Mehr",
+                    icon: "ellipsis.circle.fill",
+                    color: .gray
+                ) {
+                    showScannerMenu = true
+                }
+            }
+        }
+        .padding(Spacing.md)
+        .background(Color.backgroundSecondary)
+        .clipShape(RoundedRectangle(cornerRadius: Layout.cornerRadiusLarge))
+    }
+    
+    // MARK: - Quick Scan Handler
+    
+    private func handleQuickScan(_ code: String) {
+        guard let content = QRCodeService.parseQRContent(code) else {
+            toastManager.error("Ungültiger QR-Code")
+            return
+        }
+        
+        switch content {
+        case .equipment(let inventoryNumber):
+            if let equipment = findEquipment(byInventoryNumber: inventoryNumber) {
+                scannedEquipment = equipment
+                showEquipmentDetail = true
+            } else {
+                toastManager.warning("Gerät nicht gefunden")
+            }
+        case .equipmentById(let id):
+            if let equipment = findEquipment(byId: id) {
+                scannedEquipment = equipment
+                showEquipmentDetail = true
+            } else {
+                toastManager.warning("Gerät nicht gefunden")
+            }
+        case .rental(let rentalId):
+            toastManager.info("Ausleihe: \(rentalId.prefix(8))...")
+        }
+    }
+    
+    private func handleBatchScanComplete(_ results: [QRScanResult]) {
+        let validCount = results.filter { $0.isValid }.count
+        if validCount > 0 {
+            toastManager.success("\(validCount) Gerät(e) verarbeitet")
+        }
+    }
+    
+    private func findEquipment(byInventoryNumber inventoryNumber: String) -> Equipment? {
+        equipment.first { $0.inventoryNumber == inventoryNumber }
+    }
+    
+    private func findEquipment(byId id: String) -> Equipment? {
+        guard let uuid = UUID(uuidString: id) else { return nil }
+        return equipment.first { $0.id == uuid }
     }
 
     // MARK: - Stats Section
@@ -145,7 +270,7 @@ struct DashboardView: View {
                     icon: "qrcode.viewfinder",
                     color: Color(hex: "007AFF")
                 ) {
-                    showScanner = true
+                    showScannerMenu = true
                 }
 
                 QuickActionButton(
@@ -252,6 +377,37 @@ struct QuickActionButton: View {
             .padding(.vertical, Spacing.md)
             .background(Color.backgroundTertiary)
             .clipShape(RoundedRectangle(cornerRadius: Layout.cornerRadiusMedium))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// MARK: - Scanner Quick Button
+
+struct ScannerQuickButton: View {
+    let title: String
+    let icon: String
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: Spacing.xxs) {
+                ZStack {
+                    Circle()
+                        .fill(color.opacity(0.15))
+                        .frame(width: 44, height: 44)
+                    
+                    Image(systemName: icon)
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(color)
+                }
+
+                Text(title)
+                    .font(.labelSmall)
+                    .foregroundStyle(.primary)
+            }
+            .frame(maxWidth: .infinity)
         }
         .buttonStyle(.plain)
     }

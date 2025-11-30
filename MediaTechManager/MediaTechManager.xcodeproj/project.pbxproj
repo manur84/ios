@@ -80,6 +80,8 @@
 		A10000000071 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000071 /* ExportService.swift */; };
 		A10000000072 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000072 /* DataService.swift */; };
 		A10000000073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10000000073 /* Assets.xcassets */; };
+		A10000000074 /* ScannerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000075 /* ScannerMenuView.swift */; };
+		A10000000076 /* QRCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000077 /* QRCodeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +159,8 @@
 		B10000000072 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		B10000000073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B10000000074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10000000075 /* ScannerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerMenuView.swift; sourceTree = "<group>"; };
+		B10000000077 /* QRCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeService.swift; sourceTree = "<group>"; };
 		B10000000099 /* MediaTechManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaTechManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -366,6 +370,7 @@
 			children = (
 				B10000000039 /* QRCodeScannerView.swift */,
 				B10000000040 /* QRCodeGeneratorView.swift */,
+				B10000000075 /* ScannerMenuView.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				B10000000070 /* ImageService.swift */,
 				B10000000071 /* ExportService.swift */,
 				B10000000072 /* DataService.swift */,
+				B10000000077 /* QRCodeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -657,6 +663,8 @@
 				A10000000070 /* ImageService.swift in Sources */,
 				A10000000071 /* ExportService.swift in Sources */,
 				A10000000072 /* DataService.swift in Sources */,
+				A10000000074 /* ScannerMenuView.swift in Sources */,
+				A10000000076 /* QRCodeService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
